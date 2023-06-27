@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Employee Registration System</title>
+<style>
+        .container {
+  margin: 20px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+hr {
+  margin: 20px 0;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+
+select {
+  height: 34px;
+}
+
+button {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+/* Optional: Adjust form layout for small screens */
+@media (max-width: 576px) {
+  .col-4 {
+    width: 100%;
+  }
+  
+  .col-2 {
+    width: 100%;
+  }
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Employee Registration System</h1>
+        <hr>
+        <h2>Update Employee</h2>
+
+        <form action="#" th:action="@{/saveEmployee}" th:object="${employee}" method="POST">
+
+            <!-- Add hidden form field to handle update -->
+            <input type="hidden" th:field="*{id}" />
+
+             <input type="text" th:field="*{name}" placeholder="Employee Name" required class="form-control mb-4 col-4">
+
+            <input type="text" th:field="*{contactNumber}" placeholder="Employee Contact Number " pattern="[0-9]{10}" required class="form-control mb-4 col-4">
+
+            <input type="email" th:field="*{email}" placeholder="Employee Email" required class="form-control mb-4 col-4">
+            
+            <input type="text" th:field="*{address}" placeholder="Employee Address" required class="form-control mb-4 col-4">
+
+         <label>Education:
+            <select th:field="*{education}">
+                <option value="MCA">MCA</option>
+                <option value="B_TECH">B. Tech</option>
+                <option value="BSC_CS">B. Sc. (cs)</option>
+                <option value="M_TECH">M. Tech</option>
+            </select>
+        </label><br>            
+           <label>Experience:       
+            <input type="number" th:field="*{experience}" placeholder="Employee Experience" required class="form-control mb-4 col-4">
+             </label><br>
+            <button type="submit" class="btn btn-info col-2"> Update Employee</button>
+        </form>
+
+        <hr>
+
+        <a th:href="@{/}"> Back to Employee List</a>
+    </div>
+</body>
+
+</html>

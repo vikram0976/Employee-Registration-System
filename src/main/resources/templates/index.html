@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Employee Registration System</title>
+ 
+<style>
+    .container {
+  margin: 20px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: red;
+}
+
+a {
+  color: blue;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: green;
+  color: white;
+}
+
+.btn-danger {
+  background-color: pink;
+  color: white;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 8px;
+  text-align: left;
+  border: 5px solid blue;
+}
+
+.table th {
+  font-weight: bold;
+}
+
+.table-striped tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.table-responsive-md {
+  overflow-x: auto;
+}
+
+</style>
+</head>
+<!DOCTYPE html>
+<html>
+<title>Online HTML Editor</title>
+<head>
+</head>
+
+<body>
+ <div class="container my-2">
+ <h1>Employee Registration System of Kinben Innovation</h1>
+    <a href="/logout">Logout</a>
+
+ 
+ <h1>List of Employees</h1> 
+  <a th:href="@{/showNewEmployeeForm}" class="btn btn-primary btn-sm mb-3"> Add Employee </a>
+ 
+  <table border="1" class = "table table-striped table-responsive-md">
+   <thead>
+    <tr>
+     <th>Employee Name</th>
+     <th>Phone Number</th>
+     <th>Employee Email</th>
+     
+     <th>Address</th>
+     <th>Education</th>
+     <th>Experience</th>
+     <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr th:each="employee : ${listEmployees}">
+     <td th:text="${employee.name}"></td>
+     <td th:text="${employee.contactNumber}"></td>
+     <td th:text="${employee.email}"></td>
+     <td th:text="${employee.address}"></td>
+     <td th:text="${employee.education}"></td>
+     <td th:text="${employee.experience}"></td>
+     <td><a th:href="@{/showFormForUpdate/{id}(id=${employee.id})}" class="btn btn-primary">Update</a></td>
+     <td><a th:href="@{/deleteEmployee/{id}(id=${employee.id})}" class="btn btn-danger">Delete</a></td>
+
+    </tr>
+   </tbody>
+  </table>
+ </div>
+</body>
+</html>
+</html>
