@@ -1,6 +1,7 @@
 package com.kinbenassg.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,8 +11,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.kinbenassg.model.Employee;
 import com.kinbenassg.service.EmployeeService;
-
-
 
 @Controller
 public class EmployeeController {
@@ -27,7 +26,6 @@ public class EmployeeController {
     
     @GetMapping("/showNewEmployeeForm")
     public String showNewEmployeeForm(Model model) {
-        // create model attribute to bind form data
         Employee employee = new Employee();
         model.addAttribute("employee", employee);
         return "new_employee";

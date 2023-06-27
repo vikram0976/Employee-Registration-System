@@ -97,11 +97,11 @@ a {
    <tbody>
     <tr th:each="employee : ${listEmployees}">
      <td th:text="${employee.name}"></td>
-     <td th:text="${employee.contactNumber}"></td>
+     <td th:text="${employee.phoneNumber}"></td>
      <td th:text="${employee.email}"></td>
      <td th:text="${employee.address}"></td>
      <td th:text="${employee.education}"></td>
-     <td th:text="${employee.experience}"></td>
+     <td th:text="${employee.exp}"></td>
      <td><a th:href="@{/showFormForUpdate/{id}(id=${employee.id})}" class="btn btn-primary">Update</a></td>
      <td><a th:href="@{/deleteEmployee/{id}(id=${employee.id})}" class="btn btn-danger">Delete</a></td>
 

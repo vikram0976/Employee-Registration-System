@@ -85,7 +85,7 @@ a {
         <form action="#" th:action="@{/saveEmployee}" th:object="${employee}" method="POST">
             <input type="text" th:field="*{name}" placeholder="Employee Name" required class="form-control mb-4 col-4">
 
-            <input type="text" th:field="*{contactNumber}" placeholder="Employee Contact Number " pattern="[0-9]{10}" required class="form-control mb-4 col-4">
+            <input type="text" th:field="*{phoneNumber}" placeholder="Employee Contact Number " pattern="[0-9]{10}" required class="form-control mb-4 col-4">
 
             <input type="email" th:field="*{email}" placeholder="Employee Email" required class="form-control mb-4 col-4">
             
@@ -101,7 +101,7 @@ a {
         </label><br>
         
              <label>Experience:       
-            <input type="number" th:field="*{experience}" placeholder="Employee Experience" required class="form-control mb-4 col-4">
+            <input type="number" th:field="*{exp}" placeholder="Employee Experience" required class="form-control mb-4 col-4">
              </label><br>
             
             <button type="submit" class="btn btn-info col-2"> Save Employee</button>
