@@ -48,6 +48,8 @@ tasks as complete, delete tasks and perform various search and filter operations
 # Sign-In option
 
   - Here we have login by providing details of userId and password
+  - UserID - admin
+  - password - admin
 ![Signinpic](https://github.com/vikram0976/Employee-Registeration-System/assets/103572468/8bd17410-6136-45cb-96db-04cdb575c229)
 ![afterloginimage](https://github.com/vikram0976/Employee-Registeration-System/assets/103572468/6c2e8494-7e38-40f2-84de-903d0997c91e)
 
