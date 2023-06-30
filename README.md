@@ -1,6 +1,6 @@
 # Employee-Registeration-System
 
-This is a Task Management System application. It provides the functionality to register users, create tasks, update task details, assign tasks to users, mark 
+This is an Employee Management System application. It provides the functionality to register users, create tasks, update task details, assign tasks to users, mark 
 tasks as complete, delete tasks and perform various search and filter operations on tasks.
 
 # Features
